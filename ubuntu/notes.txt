@@ -1,0 +1,4 @@
+# For emacs:
+mkdir -p ~/.emacs.d/plugins
+cd ~/.emacs.d/plugins
+git clone --recursive https://github.com/capitaomorte/yasnippet
