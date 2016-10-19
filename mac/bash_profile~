@@ -1,0 +1,30 @@
+# Terminal prompt
+export PS1="\w $ >"
+
+#Github API token
+export HOMEBREW_GITHUB_API_TOKEN="9cf7cd2f18ec2ba75185918b3ab00fe85adf23d5"
+
+#Aliases
+alias compute="ssh -X mohitsharma44@gw.cusp.nyu.edu -t ssh -X mohitsharma44@compute"
+
+alias desktop="ssh -X mohitsharma44@gw.cusp.nyu.edu -t ssh -A -X mohitsharma44@compute.cusp.nyu.edu -t ssh -A -X mohitsharma44@128.122.72.216"
+
+alias desknotebook="\
+ssh -L 9000:localhost:9000 mohitsharma44@gw.cusp.nyu.edu \
+-t ssh -L 9000:localhost:9000 mohitsharma44@compute.cusp.nyu.edu \
+-t ssh -L 9000:localhost:8888 mohitsharma44@128.122.72.216"
+
+alias pleoravnc="\
+ssh -L 7777:localhost:7777 mohitsharma44@gw.cusp.nyu.edu \
+-t ssh -L 7777:localhost:7777 mohitsharma44@compute.cusp.nyu.edu \
+-t ssh -L 7777:localhost:5901 mohitsharma44@128.122.72.37"
+
+alias deskvnc="\
+ssh -L 7777:localhost:7777 mohitsharma44@gw.cusp.nyu.edu \
+-t ssh -L 7777:localhost:7777 mohitsharma44@compute.cusp.nyu.edu \
+-t ssh -L 7777:localhost:5901 mohitsharma44@128.122.72.216"
+
+# Git Color PS1
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
