@@ -1,0 +1,6 @@
+alias dellr220='rdesktop -u Administrator 128.122.72.98 -g 1280x740'
+alias roof='rdesktop -u uoroof 128.122.72.111 -g 1280x740'
+alias dellr220cam='echo -e "Opening on port 9999 \n \n";ssh -L9999:localhost:2222 shell.cusp.nyu.edu -t ssh -L2222:localhost:22 128.122.72.97 >> /dev/null'
+alias jupyterhub='ssh mohitsharma44@gw.cusp.nyu.edu -L 8000:compute.cusp.nyu.edu:8000'
+alias compute='ssh -X  mohitsharma44@gw.cusp.nyu.edu -t ssh -X  mohitsharma44@compute'
+alias cluster='ssh -X  mohitsharma44@gw.cusp.nyu.edu -t ssh -X  mohitsharma44@cluster'
