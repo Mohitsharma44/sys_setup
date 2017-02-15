@@ -2,9 +2,18 @@
 export PS1="\w $ >"
 
 #Github API token
+export HOMEBREW_GITHUB_API_TOKEN=""
 
 #Aliases
-alias compute="ssh -X mohitsharma44@gw.cusp.nyu.edu -t ssh -X mohitsharma44@compute"
+alias notebook="ssh mohitsharma44@gw.cusp.nyu.edu -L 8000:compute.cusp.nyu.edu:8000"
+
+#alias compute="ssh -X -A mohitsharma44@gw.cusp.nyu.edu -t ssh -X -A mohitsharma44@compute"
+
+alias compute="ssh -X -A -t gw.cusp.nyu.edu ssh -A -X compute"
+
+#alias cluster="ssh -X mohitsharma44@gw.cusp.nyu.edu -t ssh -X mohitsharma44@cluster"
+
+alias cluster="ssh -X -A -t gw.cusp.nyu.edu ssh -A -X cluster"
 
 alias desktop="ssh -X mohitsharma44@gw.cusp.nyu.edu -t ssh -A -X mohitsharma44@compute.cusp.nyu.edu -t ssh -A -X mohitsharma44@128.122.72.216"
 
@@ -23,7 +32,8 @@ ssh -L 7777:localhost:7777 mohitsharma44@gw.cusp.nyu.edu \
 -t ssh -L 7777:localhost:7777 mohitsharma44@compute.cusp.nyu.edu \
 -t ssh -L 7777:localhost:5901 mohitsharma44@128.122.72.216"
 
-# Git Color PS1
+#Git Color PS1
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
+export PATH=$PATH:~/.nexustools
