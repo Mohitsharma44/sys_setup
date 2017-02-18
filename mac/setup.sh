@@ -52,7 +52,6 @@ git_configs=(
 ############################### Start Installing the above stuff ###############################
 
 set +e
-set -x
 
 if test ! $(which brew); then
   echo "[$(date +%T)]: Installing Xcode ..."
