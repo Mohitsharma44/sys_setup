@@ -16,6 +16,7 @@ brews=(
 
 casks=(
   docker
+  emacs
   google-chrome
   google-drive
   kitematic
@@ -108,6 +109,18 @@ echo "[$(date +%T)]: Installing software ..."
 brew cask info ${casks[@]}
 install 'brew cask install' ${casks[@]}
 install 'brew cask install' ${fonts[@]}
+
+echo "[$(date +%T)]: Upgrading bash ..."
+brew install bash
+sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
+
+# https://github.com/barryclark/bashstrap
+echo "[$(date +%T)]: Installing bashstrap ..."
+mv ~/.bash_profile ~/.bash_profile_backup
+mv ~/.bashrc ~/.bashrc_backup
+mv ~/.gitconfig ~/.gitconfig_backup
+cd; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
+source ~/.bash_profile
 
 echo "[$(date +%T)]: Setting git defaults ..."
 for config in "${git_configs[@]}"
