@@ -127,12 +127,6 @@ do
   git config --global ${config}
 done
 
-echo "[$(date +%T)]: Installing mac CLI ..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
-
-echo "[$(date +%T)]: Updating Mac..."
-mac update
-
 echo "[$(date +%T)]: Installing python packages ..."
 pip install --upgrade setuptools
 pip install --upgrade pip
@@ -148,4 +142,7 @@ do
   echo "Failed to install: $fail"
 done
 
+echo "[$(date +%T)]: Installing mac CLI ..."
 echo "Tada!! Done!"
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
